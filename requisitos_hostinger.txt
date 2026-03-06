@@ -1,0 +1,600 @@
+¿Para qué se utiliza un archivo JSON?
+Volviendo a la pregunta inicial de qué es json; JSON es un formato que almacena información estructurada y se utiliza principalmente para transferir datos entre un servidor y un cliente.
+
+El archivo es básicamente una alternativa más simple y liviana al XML (Lenguaje de marcado extenso, por sus siglas en inglés) que cuenta con funciones similares.
+
+Los desarrolladores usan JSON para trabajar con AJAX (JavaScript asíncrono y XML, por sus siglas en inglés). Estos formatos funcionan bien juntos para lograr la carga asincrónica de los datos almacenados, lo que significa que un sitio web puede actualizar su información sin actualizar la página.
+
+Este proceso es más fácil de hacer con JSON que con XML/RSS. Y hoy, como muchos sitios web están adoptando AJAX, el archivo .json se ha vuelto muy popular.
+
+Además, permite a los usuarios solicitar datos de un dominio diferente con un método llamado JSONP mediante la aplicación de etiquetas <script>. De lo contrario, no puedes transferir dominios cruzados de datos debido a la política “mismo-origen” (same-origin).
+
+Sintaxis JSON
+Ya sabes qué es un archivo JSON, ahora debes saber que para crear correctamente un archivo .json, debes seguir la sintaxis correcta.
+
+Hay dos elementos centrales en un objeto JSON: claves (Keys) y valores (Values).
+
+Las Keys deben ser cadenas de caracteres (strings). Como su nombre en español lo indica, estas contienen una secuencia de caracteres rodeados de comillas.
+Los Values son un tipo de datos JSON válido. Puede tener la forma de un arreglo (array), objeto, cadena (string), booleano, número o nulo.
+Un objeto JSON comienza y termina con llaves {}. Puede tener dos o más pares de claves/valor dentro, con una coma para separarlos. Así mismo, cada key es seguida por dos puntos para distinguirla del valor.
+
+Como resultado, la sintaxis literal del objeto JSON se ve así:
+
+{“key”:“value”,“key”:“value”,“key”:“value”.}
+Estructura del objeto JSON
+Tipos de valores
+Como se mencionaba antes, los valores contienen un tipo de datos JSON válido, como:
+
+Array
+Un array (en español conocido como arreglo o vector) es una colección ordenada de valores. Está rodeado de corchetes [] y cada valor dentro está separado por una coma.
+
+Un valor de un array puede contener objetos JSON, lo que significa que utiliza el mismo concepto de par clave/valor. Por ejemplo:
+
+"estudiantes": [
+{"primerNombre":"Tom", "Apellido":"Jackson"},
+{"primerNombre":"Linda", "Apellido":"Garner"},
+{"primerNombre":"Adam", "Apellido":"Cooper"}
+]
+En este caso, la información entre corchetes es un array que tiene tres objetos.
+
+Estructura del array en JSON
+Objeto
+Un objeto contiene una clave y un valor. Hay dos puntos después de cada clave y una coma después de cada valor, que también distingue a cada objeto. Ambos están entre comillas.
+
+El objeto, como valor, debe seguir la misma regla que un objeto común. Ejemplo:
+
+{
+"empleados":{
+   "nombre":"Tom",
+   "apellido":"Jackson"
+}
+}
+Aquí, empleados es la clave, mientras que todo lo que está dentro de las llaves es el objeto.
+
+Estructura del objeto en JSON
+Strings
+Un string (conocido en español como cadena de caracteres) es una secuencia establecida de cero o más caracteres Unicode. Está encerrado entre dos comillas dobles.
+
+Este ejemplo muestra que Tom es un string ya que es un conjunto de caracteres dentro de una comilla doble.
+
+"Primer Nombre":"Tom"
+Número
+El número en JSON debe ser un número entero o un punto flotante, como
+
+{"Edad":"30"}
+Booleano
+Puedes usar verdadero o falso como valor, de la siguiente manera:
+
+{"Casado":"false"}
+Nulo
+Es para mostrar que no hay información.
+
+{"Tipo de sangre":"null"}
+Datos JSON almacenados
+Continuando con esta explicación acerca de qué es JSON, pasemos a hablar de que hay dos formas de almacenar datos JSON: objeto y vector. El primero se ve así:
+
+{
+"nombre":"Tom",
+"apellido":"Jackson",
+"género":"masculino"
+}
+Las llaves indican que es un objeto JSON. Implica tres pares clave/valor que están separados por comas.
+
+En cada par, tienes las claves (nombre, apellido y género) seguidas de dos puntos para distinguirlos de los valores (Tom, Jackson, masculino).
+
+Los valores en este ejemplo son strings. Por eso también están entre comillas, similares a las claves.
+
+Usando vectores
+Otro método para almacenar datos es un vector (array). Échale un vistazo a éste ejemplo:
+
+{
+"nombre":"Tom",
+"apellido":"Jackson",
+"género":"masculino",
+"hobby":["fútbol", "lectura", "natación"]
+}
+Lo que diferencia esto del método anterior es el cuarto par clave/valor. Hobby es la clave y hay varios valores (fútbol, ​​lectura, natación) entre corchetes, que representan un vector.
+
+Puede ser útil cuando se combina con JSONP para superar el problema entre dominios. Este proceso funciona utilizando lo que se denomina devoluciones de llamada (callbacks), que solicitarán un elemento específico del vector sin obtener un error “del mismo origen” (same-origin).
+
+Y afortunadamente, un Array también admite bucles, lo que te permite ejecutar comandos repetidos para buscar múltiples datos, haciendo que el proceso sea más rápido y efectivo.
+
+
+Conclusión
+Como puedes ver, se trata de una herramienta útil para intercambiar datos. Tiene muchas ventajas:
+
+Puedes cargar información de forma asíncrona para que tu sitio web responda mejor y pueda manejar el flujo de datos con mayor facilidad.
+También puedes usarlo para superar problemas de dominio cruzado al intercambiar datos desde otro sitio.
+Un archivo JSON es más simple y más liviano que un archivo XML.
+Esperamos que comprendas mejor qué es JSON y puedas administrar tu sitio web de manera más efectiva.
+
+All of the tutorial content on this website is subject to Hostinger's rigorous editorial standards and values.
+
+
+
+Cómo agregar una aplicación web Node.js en Hostinger
+Actualizado hace 8 horas
+El alojamiento de aplicaciones web Node.js te permite implementar aplicaciones web modernas creadas con frameworks JavaScript populares como React, Vue.js y Angular directamente en Hostinger, con compilaciones e implementaciones automáticas. Sí, Hostinger admite aplicaciones Node.js en los planes de alojamiento Business y Cloud. Esta guía te mostrará cómo implementar tu aplicación Node.js paso a paso.
+
+¿Qué planes de alojamiento admiten aplicaciones web Node.js?
+Las aplicaciones web Node.js están disponibles en los siguientes planes de alojamiento de Hostinger:
+
+Alojamiento web empresarial
+Puesta en marcha en la nube
+Profesional en la nube
+Empresa en la nube
+Cloud Enterprise Plus
+Si actualmente tienes un plan diferente, puedes actualizar tu plan de alojamiento a través de hPanel para acceder al soporte de Node.js
+
+NOTA: Los planes de servidor dedicado y VPS también admiten aplicaciones Node.js pero requieren configuración manual a través de la interfaz de línea de comandos.
+Lo que necesitarás
+Un plan de alojamiento empresarial o un plan de alojamiento en la nube (Cloud Startup, Cloud Professional, Cloud Enterprise o Cloud Enterprise Plus)
+Una aplicación Node.js creada con un marco compatible
+Un repositorio de GitHub o archivos de proyecto comprimidos
+Marcos y tecnologías compatibles
+Su aplicación Node.js debe crearse con uno de estos marcos:
+
+Aplicaciones compatibles con frontend
+React
+Vue.js
+Angular
+Vite
+Parcela
+Preact
+Next.js
+Nuxt.js
+Aplicaciones compatibles con backend
+Next.js
+Express.js
+NestJS
+Nuxt.js
+Versiones de Node.js compatibles: 18.x, 20.x, 22.x, 24.x
+
+Implementación desde un repositorio de GitHub
+Paso 1: Acceda a la sección de la aplicación web Node.js
+Inicie sesión en su hPanel de Hostinger , navegue a Sitios web en la barra lateral y haga clic en Agregar sitio web :
+
+
+
+Paso 2: Seleccionar la aplicación web Node.js
+Elija   Aplicaciones Node.js de las opciones disponibles.
+
+Paso 3: Elige la integración de GitHub
+Seleccione Importar repositorio Git :
+
+
+
+Paso 4: Autorizar el acceso a GitHub
+Serás redirigido a GitHub. Haz clic en "Autorizar" para permitir que Hostinger acceda a tus repositorios.
+
+           
+
+Paso 5 – Seleccione su repositorio
+Elija el repositorio que contiene su aplicación Node.js:
+
+
+
+Paso 6: Configurar los ajustes de compilación
+El sistema detectará automáticamente su marco y le sugerirá configuraciones de compilación donde podrá modificarlas.
+
+
+
+Paso 7: Implementa tu sitio web
+Haga clic en Implementar para comenzar a construir su aplicación.
+
+
+
+¡Tu aplicación Node.js ya está activa!🚀
+
+Implementación mediante la carga de archivos
+Paso 1: Acceda a la sección de aplicaciones de Node.js
+Inicie sesión en hPanel , vaya a Sitios web y haga clic en Agregar sitio web :
+
+
+
+Paso 2: Seleccionar la aplicación front-end
+Seleccione Aplicaciones Node.js de las opciones.
+
+Paso 3 – Seleccionar Cargar archivo
+Seleccione Cargar los archivos de su sitio web :
+
+
+
+Paso 4 – Sube tu proyecto
+Sube un archivo comprimido ( .zip) que contenga tu aplicación Node.js.
+
+Paso 5: Configurar los ajustes de compilación
+Confirmar o editar la configuración de compilación detectada automáticamente:
+
+
+
+Paso 6: Implementa tu sitio web
+Haga clic en Implementar para compilar y ejecutar su aplicación:
+
+
+
+¡Tu sitio web ya está listo para usarse!
+
+Administrar su aplicación Node.js
+El panel de control del sitio web Node.js tiene funciones que le ayudarán a acceder rápidamente a información importante:
+
+
+
+1. Enlace rápido al repositorio de GitHub.
+ 
+Si tu aplicación se implementa mediante GitHub, el panel de control ahora muestra un enlace directo al repositorio de GitHub conectado. Haz clic en él para abrir el repositorio en una nueva pestaña, lo cual resulta útil para consultar rápidamente tu código, ramas o confirmaciones recientes sin salir de hPanel.
+
+2. Detalles de la última implementación
+ 
+El panel ahora muestra información detallada sobre su implementación más reciente, que incluye: 
+
+• Estado de la implementación (exitosa o fallida) 
+
+• Marca de tiempo de la última implementación 
+
+• Un enlace rápido para ver el registro de implementación completo 
+
+Esto reemplaza la necesidad de navegar a la sección Implementaciones solo para verificar el último estado de la compilación.
+
+3. Enlaces rápidos a funciones clave
+ 
+Se han agregado nuevos enlaces de navegación rápida al panel para que pueda saltar directamente a: 
+
+• Implementaciones 
+
+• Variables de entorno 
+
+• Configuraciones y reimplementación 
+
+• Administrador de archivos
+
+4. Gráficos de Uso de Recursos.
+ 
+El panel ahora incluye gráficos de uso promedio de recursos para los límites más importantes del plan, como CPU, RAM y E/S. Estos gráficos te ofrecen una visión general rápida de cómo tu aplicación Node.js consume recursos de alojamiento, sin necesidad de acceder a la sección completa de Uso de Recursos. 
+
+Si alguna métrica se acerca a la línea punteada roja (el límite de tu plan), considera optimizar tu aplicación o actualizar tu plan.
+
+Estructura del archivo después de la implementación
+Para las aplicaciones Node.js que generan archivos de compilación de back-end (por ejemplo, Express.js, Next.js, Nuxt.js, NestJS), la salida de la compilación se almacena fuera de public_html:
+
+• Ubicación de los archivos de compilación: /home/{username}/domains/{domain}/nodejs
+ 
+• .htaccessubicación: /home/{username}/domains/{domain}/public_html/.htaccess — creado automáticamente para manejar el enrutamiento y servir el contenido correctamente.
+
+Si su aplicación se implementó previamente con archivos de compilación dentro public_html, se moverán automáticamente en la próxima compilación.
+
+NOTA
+• Este cambio solo aplica a los frameworks back-end. Las aplicaciones front-end (React, Vue, Angular) no se ven afectadas.
+• Si se produce un error 403 después de la reimplementación, compruebe que el .htaccessarchivo public_htmlse esté enrutando correctamente al nodejsdirectorio. Al reimplementar la aplicación, se regenera este archivo.
+Preguntas frecuentes
+1. Ya tengo un dominio añadido en Hostinger. ¿Cómo implemento Node.js en él?
+
+Actualmente, los sitios web Node.js deben implementarse como un nuevo sitio web. Este es el proceso:
+
+Si el dominio ya está añadido a tu plan de hosting, asegúrate de eliminar el sitio web antes de añadirlo. Nota : Descarga una copia de seguridad antes de eliminar el sitio web.
+Haga clic en Agregar sitio web y seleccione Aplicación web de interfaz
+Elija su método de implementación (GitHub o carga de archivos)
+Una vez completada la implementación, estará activa en el sitio web que haya agregado.
+2. ¿Cómo puedo eliminar o anular la implementación de mi sitio web Node.js?
+
+Actualmente, no hay botones para "Detener" ni "Eliminar" en las implementaciones de Node.js. La forma recomendada de desconectar completamente la aplicación es eliminar todo el sitio web de hPanel. Esta acción eliminará todas las implementaciones asociadas y desconectará la aplicación.
+
+NOTA : Antes de eliminar su sitio web, se recomienda encarecidamente descargar copias de seguridad, ya que esta acción no es reversible y se perderán todos los archivos, bases de datos, correos electrónicos y cualquier configuración .
+3. ¿Qué comandos npm se pueden ejecutar?
+
+No necesita ejecutar comandos npm manualmente a través de SSH ni instalar NPM por separado: ya está preinstalado por Hostinger.
+
+Los comandos de compilación npm disponibles están visibles en el menú desplegable Configuración de compilación durante la configuración de la aplicación.
+
+
+Qué es Node.js: casos de uso comunes y cómo instalarlo
+Resumir con:
+ChatGPT
+Claude.ai
+Inteligencia artificial de Google
+Grok
+Perplejidad
+Compartir:
+Node.js es un entorno de tiempo de ejecución de JavaScript que se utiliza para crear aplicaciones escalables del lado del servidor y de red a través de servidores privados virtuales . Operaciones de entrada/salida (E/S) no bloqueantes y está construida según una arquitectura asincrónica Ofrece basada en eventos para ayudar a los desarrolladores a crear diversos proyectos de forma eficiente y sencilla.
+
+Este artículo cubrirá cómo funciona node.js, y discutirá algunos de sus casos de uso comunes. También exploraremos las diferencias entre Node.js y npm. Por último, proporcionaremos un tutorial paso a paso sobre cómo instalar Node.js en Windows, macOS y Linux.
+
+Descarga Glosario Completo de Desarrollo Web
+
+¿ Qué es Node.js?
+Node.js es un entorno de ejecución de un solo hilo y multiplataforma basado en el motor V8 de JavaScript de Google Chrome. Es un software de código abierto para construir aplicaciones de red escalables y en tiempo real.
+
+¿Cómo funciona Node.js?
+En comparación con otra plataforma, Node.js tiene un flujo de trabajo particular. Funciona como un único proceso, lo que significa que no crea un nuevo hilo para cada petición. Un hilo es un conjunto de instrucciones que debe realizar el servidor.
+
+Node.js emplea operaciones de E/S no bloqueantes: cuando un cliente envía una solicitud al servidor web, el bucle de eventos de un solo hilo la recoge y la envía un hilo de trabajo (hilo trabajador) para su procesamiento.
+
+En lugar de bloquear el hilo y desperdiciar recursos de la CPU esperando una respuesta, Node.js continuará trabajando en la siguiente tarea. De esta manera, puede manejar una cantidad masiva de solicitudes simultáneas.
+
+Dicho esto, Node.js no es adecuado para tareas que requieren un uso intensivo de la CPU, ya que podría impedir que el hilo principal maneje otras solicitudes, bloqueándolo efectivamente.
+
+Arquitectura asincrónica
+Como se ha comentado anteriormente, el hilo de Node.js no espera una respuesta y pasa a procesar una petición posterior. En la arquitectura asincrónica, el bucle de eventos opera de forma dirigida por eventos. Una vez que ha recibido una respuesta de la llamada anterior a la API, pone la respuesta en la cola de eventos
+
+El bucle de eventos terminará todas las peticiones anteriores y actuales antes de ejecutar una función de devolución de llamada para enviar la respuesta del servidor al cliente.
+
+Dado que Node.js utiliza un bucle de eventos de un solo hilo, puede atender varias solicitudes simultáneamente con tiempos de ejecución más rápidos y un menor uso de recursos.
+
+En comparación, el software de arquitectura sincrónica realiza una tarea a la vez. Por lo tanto, el bucle de eventos sólo pasará a la siguiente si la tarea anterior ha terminado.
+
+Explicación de cómo funcionan las arquitecturas sincrónicas y asincrónicas
+Casos de uso de Node.js
+Node.js es una buena solución para realizar tareas intensivas de datos o análisis en tiempo real, ya que tiene una arquitectura asincrónica y características de E/S sin bloqueo. Algunos casos de uso populares incluyen:
+
+Chatea en tiempo real. Node.js puede trabajar con programas de uso intensivo de datos, como las aplicaciones de chat, ya que maneja las tareas de E/S con eficacia. Utiliza tecnología push sobre sockets web, lo que permite la comunicación bidireccional entre servidores y clientes. Como resultado, el servidor no necesita mantener hilos separados para cada conexión abierta debido a la arquitectura asincrónica de un solo hilo de Node.js.
+Transmisión de datos. Node.js tiene módulos incorporados que soportan el flujo de datos, lo que permite la creación de flujos de lectura y escritura. Node.js ayudará a poner en cola los datos y distribuirlos de forma asincrónica sin bloqueos ni interrupciones. Es una buena opción para las empresas que cuentan con funciones de streaming que pueden procesar archivos mientras se cargan.
+Proxies del lado del servidor. Node.js puede gestionar una cantidad masiva de conexiones simultáneas utilizando un enfoque sin bloqueo. Puede emplearse como un eficaz proxy del lado del servidor que recoge datos de varios recursos de terceros. En algunos casos, Node.js se utiliza para construir aplicaciones del lado del cliente para gestionar activos y hacer proxies y stubs de solicitudes de API.
+Tablas de control del sistema. Gracias a la función de bucle de eventos de Node.js, puedes crear un panel de control basado en la web para comprobar el estado de cualquier servicio de forma asincrónica. Todo ello se puede informar en directo y en tiempo real de los estados de los servicios tanto internos como públicos.
+RESTO API. Node.js cuenta con una serie de paquetes como Express.js y Koa.js que se pueden utilizar para construir aplicaciones web. Puede acelerar el proceso de integración de la API y ser la base de una API REST ligera y rápida.
+Aplicaciones de una sola página (SPA). Los SPA ingresan se cargan en una sola página para una experiencia similar a la de una aplicación de escritorio. Como Node.js puede manejar llamadas asincrónicas de manera eficiente entre las operaciones pesadas de E/S, permite que las SPA tengan actualizaciones de datos sin refrescar la página.
+También es importante tener en cuenta que Node.js soporta tanto el desarrollo de frontend como de backend. Estas son las razones por las que funciona para ambos:
+
+Código reutilizable. Se pueden reutilizar múltiples componentes de Node.js tanto para el backend como para el frontend.
+Alta eficiencia. El uso de Node.js puede reducir el cambio de contexto entre múltiples lenguajes de programación.
+Node.js vs npm
+Mientras que Node.js es un entorno de ejecución de JavaScript, el Node Package Manager de npm es una gran parte del ecosistema de Node.js
+
+Es un gestor de paquetes que permite a las comunidades de JavaScript y Node.js publicar y compartir sus módulos de node con otras personas. Esto hace que el proceso de desarrollo de aplicaciones sea más rápido y eficiente.
+
+npm consta de dos partes:
+
+Una herramienta de interfaz de línea de comandos (en inglés, command-line interface, CLI) para descargar y publicar paquetes.
+Un repositorio en línea que almacena paquetes de JavaScript y Node.js.
+npm alberga millones de paquetes descargables que están organizados en múltiples categorías. Está considerado como el mayor registro de software del mundo. Toda la biblioteca de módulos empaquetados se puede encontrar en el sitio web oficial .
+
+Por defecto, npm viene con cada instalación de Node.js. Para utilizarlo, es necesario descargar los paquetes en el sitio web oficial .
+
+Cómo instalar Node.js
+Node.js se puede instalar de diferentes maneras. Estos son los métodos más convenientes para instalarlo dependiendo del sistema operativo, Windows, macOS y Linux:
+
+Windows
+
+Sigue estas instrucciones para instalar Node.js en un equipo con Windows:
+
+Descargue el instalador de Node.js directamente desde la web oficial.
+Haga doble clic en el archivo descargado , se abrirá la ventana de instalación de Node.js. Pulsa Siguiente .
+Ventana para empezar a configurar Nodejs
+Revisado el Acuerdo de Licencia de Usuario Final y marca Acepto los términos del Acuerdo de Licencia . Pulsa Siguiente.
+Elige la carpeta de destino y pulsa Siguiente.
+Ventana para elegir la carpeta de destino
+Selecciona las características que se van a instalar. Si no estás seguro, deja los valores por defecto y pulsa Siguiente .
+Configurar las características que se van a instalar
+En la página siguiente, marca Instalar automáticamente las herramientas necesarias . Haz clic en Siguiente y luego en Instalar . Es posible que te preguntes si deseas permitir que el programa de instalación realice cambios, selecciona Sí .
+Una vez finalizada la instalación por defecto, se abrirá una ventana de símbolo del sistema para la configuración de herramientas adicionales. Pulsa dos veces cualquier tecla para continuar.
+Ventana del símbolo del sistema
+Una vez finalizado el proceso, la interfaz te pedirá que pulses Enter para cerrar la ventana.
+Visualización de la ventana al finalizar el proceso
+Para verificar la versión de Node.js, abre el símbolo del sistema y ejecuta el siguiente comando:
+node -v
+npm -v
+Ventana de ejecución del comando en el símbolo del sistema
+macOS
+
+A continuación, se explica cómo instalar Node.js en un equipo macOS:
+
+Descargue la última versión del instalador Node.js desde la web oficial.
+Haga doble clic en el archivo descargado y se abrirá la ventana de instalación de Node.js. Haz clic en Continuar .
+Ventana de instalación Node.js
+Revise el Acuerdo de Licencia de Software y seleccione Continuar .
+Selecciona la carpeta de destino y pulsa Continuar .
+Ventana para elegir carpeta de destino
+Revise el tipo de instalación y presione Install .
+Comenzará el proceso de instalación.
+Tanto Node.js como NPM estarán disponibles después de la instalación. Pulse Cerrar para finalizar la instalación.
+Ventana de finalización de la instalación
+A continuación, presione el icono de Launchpad en el muelle y abre Terminal .
+Verifica la instalación de Node.js y NPM escribiendo los siguientes comandos:
+node -v
+npm -v
+Comandos para verificar la instalación de Node.js
+Linux
+
+Sigue los siguientes pasos para instalar Node.js en Linux. En este tutorial usaremos Ubuntu
+
+
+Consejo profesional
+Si estás utilizando un VPS de Hostinger, puedes elegir una plantilla de sistema operativo con Node.js ya preinstalada
+
+Haz clic en el botón Mostrar aplicaciones y abre Terminal .
+Ejecute el siguiente comando para instalar Node.js :
+sudo apt install nodejs
+Una vez que tu dispositivo Linux haya completado la instalación, tendrás que instalar NPM.
+sudo apt install npm
+Ventana de instalación de Node.js completada
+A continuación, verifica la versión de Node.js ejecutando estos comandos:
+nodejs -v
+npm -v
+Comandos para verificar la versión de node.js
+Conclusión
+Node.js es un entorno de ejecución de código JavaScript abierto y multiplataforma que se utiliza para desarrollar aplicaciones escalables del lado del servidor y de la red. Está basado en el motor de ejecución de JavaScript V8 de Google Chrome
+
+El procesamiento de una solicitud con Node.js es eficiente y ligero. El software es adecuado para aplicaciones de uso intensivo de datos y en tiempo real, como chats en tiempo real, streaming de datos, proxies del lado del servidor, tableros de control del sistema, APIs REST y SPAs.
+
+Para instalar Node.js en Windows y macOS, descargue el instalador desde la web oficial. Los usuarios de Linux tendrán que obtenerlo mediante un comando de Terminal.
+
+Esperamos que este artículo te haya ayudado a entender Node.js. Si tienes alguna duda o sugerencia, déjala en la sección de comentarios más abajo.
+
+Node.js
+
+How to add a Node.js Web App in Hostinger
+Updated 10 hours ago
+Node.js Web Apps Hosting allows you to deploy modern web applications built with popular JavaScript frameworks like React, Vue.js, and Angular directly to Hostinger with automatic builds and deployments. Yes, Hostinger supports Node.js applications on Business and Cloud hosting plans. This guide will show you how to deploy your Node.js application step-by-step.
+
+Which Hosting Plans Support Node.js Web Applications?
+Node.js web applications are available on the following Hostinger hosting plans:
+
+Business Web Hosting
+Cloud Startup
+Cloud Professional
+Cloud Enterprise
+Cloud Enterprise Plus
+If you’re currently on a different plan, you can upgrade your hosting plan through hPanel to access Node.js support.
+
+NOTE: VPS and dedicated server plans also support Node.js applications but require manual configuration through the command line interface.
+What You’ll Need
+A Business hosting plan or Cloud hosting plan (Cloud Startup, Cloud Professional, Cloud Enterprise, or Cloud Enterprise Plus)
+A Node.js app built with a supported framework
+Either a GitHub repository or compressed project files
+Supported Frameworks and Technologies
+Your Node.js app must be built with one of these frameworks:
+
+Frontend-supported Applications
+React
+Vue.js
+Angular
+Vite
+Parcel
+Preact
+Next.js
+Nuxt.js
+Backend-supported Applications
+Next.js
+Express.js
+NestJS
+Nuxt.js
+Supported Node.js versions: 18.x, 20.x, 22.x, 24.x
+
+Deploying from a GitHub Repository
+Step 1 – Access the Node.js Web App section
+Log in to your Hostinger hPanel, navigate to Websites on the sidebar, and click Add Website:
+
+
+
+Step 2 – Select Node.js Web App
+Choose  Node.js Apps from the available options.
+
+Step 3 – Choose GitHub Integration
+Select Import Git Repository:
+
+
+
+Step 4 – Authorize GitHub Access
+You’ll be redirected to GitHub. Click Authorize to allow Hostinger to access your repositories:
+
+           
+
+Step 5 – Select Your Repository
+Choose the repository containing your Node.js app:
+
+
+
+Step 6 – Configure Build Settings
+The system will automatically detect your framework and suggest build settings where you can modify them.
+
+
+
+Step 7 – Deploy Your Website
+Click Deploy to start building your application.
+
+
+
+Your Node.js app is now live! 🚀
+
+Deploying by Uploading Files
+Step 1 – Access the Node.js Apps Section
+Log in to hPanel, go to Websites, and click Add Website:
+
+
+
+Step 2 – Select Front-End Application
+Choose Node.js Apps from the options.
+
+Step 3 – Choose File Upload
+Select Upload your website files:
+
+
+
+Step 4 – Upload Your Project
+Upload a compressed file (.zip) containing your Node.js app.
+
+Step 5 – Configure Build Settings
+Confirm or edit the auto-detected build settings:
+
+
+
+Step 6 – Deploy Your Website
+Click Deploy to build and launch your application:
+
+
+
+Your website is now ready to use!
+
+Managing Your Node.js App
+The Node.js Website Dashboard has features to help you quickly access important information:
+
+
+
+1. GitHub Repository Quick Link
+
+If your app is deployed via GitHub, the dashboard now shows a direct link to the connected GitHub repository. Click it to open the repo in a new tab — useful for quickly checking your code, branches, or recent commits without leaving hPanel.
+
+2. Last Deployment Details
+
+The dashboard now displays detailed information about your most recent deployment, including:
+
+• Deployment status (success or failed)
+
+• Timestamp of the last deployment
+
+• A quick link to view the full deployment log
+
+This replaces the need to navigate to the Deployments section just to check the latest build status.
+
+3. Quick Links to Key Features
+
+New quick navigation links have been added to the dashboard so you can jump directly to:
+
+• Deployments
+
+• Environment Variables
+
+• Settings & Redeploy
+
+• File Manager
+
+4. Resource Usage Graphs
+
+The dashboard now includes average resource usage graphs for the most important plan limits, including CPU, RAM, and I/O. These graphs give you a quick visual overview of how your Node.js app is consuming hosting resources — without needing to navigate to the full Resource Usage section.
+
+If any metric approaches the red dotted line (your plan’s limit), consider optimizing your app or upgrading your plan.
+
+File structure after deployment
+For Node.js applications that generate back-end build files (e.g., Express.js, Next.js, Nuxt.js, NestJS), build output is stored outside of public_html:
+
+• Build files location: /home/{username}/domains/{domain}/nodejs
+
+• .htaccess location: /home/{username}/domains/{domain}/public_html/.htaccess — automatically created to handle routing and serve content correctly.
+
+If your application was previously deployed with build files inside public_html, they will be moved automatically on the next build.
+
+NOTE
+• This change applies to back-end frameworks only. Front-end-only apps (React, Vue, Angular) are not affected.
+• If you encounter a 403 error after redeployment, check that the .htaccess file in public_html is correctly routing to the nodejs directory. Redeploying the application regenerates this file.
+Frequently Asked Questions
+1. I already have a domain added at Hostinger. How do I deploy Node.js to it?
+
+Currently, Node.js websites must be deployed as a new website. Here’s the process:
+
+If the domain is already added to your hosting plan, make sure to remove the website first before adding the website. Note: Make sure to download backup before removing the website.
+Click Add Website and select Frontend web app
+Choose your deployment method (GitHub or file upload)
+Once deployment is completed, it will be active in the website that you added.
+2. How do I remove or undeploy my Node.js website?
+
+Currently, there’s no feature to “Stop” or “Delete” buttons for Node.js deployments. The recommended way to fully take your app offline is to remove the entire website from hPanel. This action will delete all associated deployments and take your app offline.
+
+NOTE: Before you remove your website, it is strongly advised to download backups as this action is not reversible, and all files, databases, emails, and any configuration will be lost.
+3. What npm commands can be run?
+
+You don’t need to run npm commands manually via SSH or install NPM separately – it’s already pre-installed by Hostinger.
+
+The npm build commands available to you are visible in the Build settings dropdown during application setup.
+
+
+
+That’s it! Now you’ve learned how to deploy a Node.js app in Hostinger using either GitHub integration or direct file upload. If you have any questions or need further assistance, feel free to reach out to our support team via live chat 24/7 – we’re always here to help! 💜

@@ -16,7 +16,16 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8080;
 
-app.use(cors());
+// Configuración de CORS basada en entorno
+const corsOrigins = process.env.CORS_ORIGIN 
+    ? process.env.CORS_ORIGIN.split(',') 
+    : ['http://localhost:5173']; // Puerto por defecto de Vite
+
+app.use(cors({
+    origin: corsOrigins,
+    credentials: true
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -39,12 +48,10 @@ app.use('/api/disputes', disputeRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/reviews', reviewRoutes);
 
-// Configuración para servir archivos estáticos (el frontend de React)
-app.use(express.static(path.join(__dirname, '..', 'public')));
-
-// Catch-all Route for React SPA (Client-side routing fallback)
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+// En Hostinger/Producción, el servidor frontend separado (Apache) sirve los estáticos de React.
+// Por precaución, devolvemos un mensaje a quien intente entrar a la raíz de la API directamente.
+app.get('/', (req, res) => {
+    res.json({ message: 'Marketplace API is running v1.0.0' });
 });
 
 // Start Server

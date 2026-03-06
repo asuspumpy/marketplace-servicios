@@ -1,0 +1,40 @@
+name: Deploy Frontend to Hostinger
+
+on:
+  push:
+    branches:
+      - main
+      - master # Por si usas la rama master en vez de main
+
+jobs:
+  build-and-deploy:
+    name: 🎉 Construir y Sincronizar (FTP)
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 🚚 Obtener el código más reciente
+      uses: actions/checkout@v4
+      
+    - name: ⚙️ Configurar Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        
+    - name: 🔨 Instalar Dependencias y Compilar (Frontend)
+      run: |
+        cd frontend
+        npm ci || npm install
+        npm run build
+        
+    - name: 📂 Sincronizar Archivos a Hostinger (FTP)
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./frontend/dist/
+        server-dir: ./public_html/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          node_modules/**
